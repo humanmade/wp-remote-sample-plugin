@@ -17,7 +17,21 @@ add_filter( 'site_transient_update_plugins', 'wprp_extend_filter_update_plugins'
 add_filter( 'transient_update_plugins', 'wprp_extend_filter_update_plugins' );
 function wprp_extend_filter_update_plugins( $update_plugins ) {
 
-	error_log( var_export( $update_plugins, true ) );
+	if ( ! is_object( $update_plugins ) )
+			return $update_plugins;
+
+	if ( ! isset( $update_plugins->response ) || ! is_array( $update_plugins->response ) )
+		$update_plugins->response = array();
+
+	// Do whatever you need to see if there's a new version of your plugin
+	// Your response will need to look something like this:
+	$update_plugins->response['wpremote-sample/wpremote-sample.php'] = (object)array(
+			'slug'         => 'wpremote-sample',
+			'new_version'  => '0.2',
+			'url'          => 'https://github.com/humanmade/wp-remote-sample-plugin',
+			'package'      => '?????',
+		);
+
 
 	return $update_plugins;
 }
