@@ -29,7 +29,7 @@ function wprp_extend_filter_update_plugins( $update_plugins ) {
 			'slug'         => 'wpremote-sample',
 			'new_version'  => '0.2',
 			'url'          => 'https://github.com/humanmade/wp-remote-sample-plugin',
-			'package'      => '?????',
+			'package'      => 'https://github.com/humanmade/wp-remote-sample-plugin/archive/0.2.zip',
 		);
 
 
