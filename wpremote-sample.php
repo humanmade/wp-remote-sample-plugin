@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Remote Sample Plugin
-Version: 0.2
+Version: 0.1
 Description: Human Made's awesome plugin
 Author: Human Made
 Author URI: http://hmn.md/
